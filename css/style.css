@@ -1,0 +1,55 @@
+:root {
+	--dark-teal: #2E8B8B;
+	--light-teal: #D6EEEE;
+	--other-teal: #6cc;
+	--dark-gray: #666;
+	--light-gray: #f2f2f2;
+}
+
+body {
+	background-color: var(--light-gray);
+}
+
+.login-card {
+	padding: 1.5em;
+	margin: auto;
+	margin-top: 10%;
+	width: 50%;
+	border: 5px groove var(--dark-teal);
+	border-radius: 30px;
+	font-family: 'Montserrat';
+	background-color: white;
+}
+
+.login-card > form > * {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.login-card form label {
+	display: block;
+}
+
+.login-card form input {
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+.login-card h1 {
+	color: var(--dark-teal);
+}
+
+.login-card a {
+	text-decoration: none;
+	color: var(--dark-teal);
+}
+
+.login-card a:hover {
+	color: var(--other-teal);
+}
+
+.login-card form {
+	padding: 10px;
+}
+
+
