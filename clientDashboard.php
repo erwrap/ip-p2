@@ -67,7 +67,7 @@ requireLogin();
 
   <nav class="navbar">
     <a href="#" class="active">Dashboard</a>
-    <a href="#">Service Requests</a>
+    <a href="requests.php">Service Requests</a>
     <a href="documents.php">Documents</a>
     <a href="#">Invoices</a>
     <a href="messages.php">Messages</a>

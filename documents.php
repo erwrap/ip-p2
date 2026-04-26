@@ -143,7 +143,7 @@ a.delete {
 
 <nav class="navbar">
   <a href="clientDashboard.php">Dashboard</a>
-  <a href="#">Service Requests</a>
+  <a href="requests.php">Service Requests</a>
   <a href="documents.php" class="active">Documents</a>
   <a href="#">Invoices</a>
   <a href="messages.php">Messages</a>
