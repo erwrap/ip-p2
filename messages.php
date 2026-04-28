@@ -20,7 +20,7 @@ body { font-family: Arial; font-size: 14px; background:#fff; }
   background:#f5f5f5;
   font-size: 13px;
 }
-.navbar a.active { background:#2a8a7e; color:#fff; }
+.navbar a.active { background:#2a8a7e; color:#fff; border-color: #2a8a7e; }
 .spacer { flex:1; }
 
 .content { padding:20px; }
