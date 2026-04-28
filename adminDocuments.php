@@ -113,9 +113,9 @@ button:hover {
 </div>
 
 <nav class="navbar">
-  <a href="clientDashboard.php">Dashboard</a>
-  <a href="#">Service Requests</a>
-  <a href="documents.php" class="active">Documents</a>
+  <a href="adminDashboard.php">Dashboard</a>
+  <a href="adminRequests.php">Service Requests</a>
+  <a href="#" class="active">Documents</a>
   <a href="#">Invoices</a>
   <a href="adminMessages.php">Messages</a>
   <div class="spacer"></div>

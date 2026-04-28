@@ -12,28 +12,11 @@ $user_id = $_SESSION["user_id"];
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Service Requests</title>
+  <link rel="stylesheet" href="css/clientNavbar.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; font-size: 14px; background: #fff; color: #222; }
-	textarea { font-family: Arial, sans-serif; font-size: 14px; }
 
-    .header {display: flex; padding: 40px 15px; background-color: #2a8a7e; color: #fff;}
-
-    .navbar { display: flex; border-bottom: 2px solid #2a8a7e; }
-    .navbar a {
-      display: block;
-      padding: 10px 16px;
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #ccc;
-      border-bottom: none;
-      background: #f5f5f5;
-      font-size: 13px;
-    }
-    .navbar a.active { background: #2a8a7e; color: #fff; border-color: #2a8a7e; }
-    .navbar .spacer { flex: 1; }
-
-    .content { padding: 20px; }
+	input { font-family: Arial, sans-serif; font-size: 13px; padding: 7px; width: 100%; }
 
     .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
     .card {
@@ -47,12 +30,11 @@ $user_id = $_SESSION["user_id"];
     .section-label { font-size: 13px; font-weight: bold; margin-bottom: 8px; }
     table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
     table th { background: #d6f0ec; color: #1d7a70; text-align: left; padding: 8px 10px; border: 1px solid #a8d8d0; }
-    table td, table td select { padding: 7px 10px; border: 1px solid #ddd; }
-	table td select { height: 100%; width: 100%; padding: 4px 4px; }
+    table td, table td select { padding: 7px 10px; border: 1px solid #ccc; }
+	table td select { height: 100%; width: 100%; padding: 7px; }
     table a { color: #1d7a70; text-decoration: underline; cursor: pointer; margin-right: 4px; font-size: 12px; }
 
 	.new-request tr th { width: 25%; }
-	
 
     .chart-box {
       background: #f5f5f5;
@@ -137,7 +119,7 @@ $user_id = $_SESSION["user_id"];
 	}
 	echo "</select></td><tr>";
 	echo "<th>Description / Notes</th>";
-	echo "<td><textarea placeholder=\"Describe your issue...\" name=\"notes\" id=\"notes\"></textarea>";
+	echo "<td><input type=\"text\" placeholder=\"Describe your issue...\" name=\"notes\" id=\"notes\"></input>";
 	echo "</tr><tr>";
 	echo "<th>Priority</th>";
 	echo "<td><select name=\"priority\" id=\"priority\">";

@@ -9,27 +9,9 @@ requireLogin();
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Client Dashboard</title>
+  <link rel="stylesheet" href="css/clientNavbar.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; font-size: 14px; background: #fff; color: #222; }
-
-    .header {display: flex; padding: 40px 15px; background-color: #2a8a7e; color: #fff;}
-
-    .navbar { display: flex; border-bottom: 2px solid #2a8a7e; }
-    .navbar a {
-      display: block;
-      padding: 10px 16px;
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #ccc;
-      border-bottom: none;
-      background: #f5f5f5;
-      font-size: 13px;
-    }
-    .navbar a.active { background: #2a8a7e; color: #fff; border-color: #2a8a7e; }
-    .navbar .spacer { flex: 1; }
-
-    .content { padding: 20px; }
 
     .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
     .card {
