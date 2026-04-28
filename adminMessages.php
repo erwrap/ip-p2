@@ -143,7 +143,7 @@ body {
 
   <div class="spacer"></div>
 
-  <a href="clientDashboard.php">Switch to Client View</a>
+  <a href="messages.php">Switch to Client View</a>
   <a href="logout.php">Logout</a>
 </nav>
 

@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+	require_once 'auth.php'; 
+	if (!isset($_SESSION)) session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +62,11 @@
   <a href="#">Invoices</a>
   <a href="#" class="active">Messages</a>
   <div class="spacer"></div>
+	<?php
+		if (isAdmin()) {
+			echo "<a href=\"adminMessages.php\">Switch to Admin View</a>";
+		}
+	?>
   <a href="logout.php">Logout</a>
 </nav>
 

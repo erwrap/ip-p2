@@ -100,6 +100,11 @@ $user_id = $_SESSION["user_id"];
     <a href="invoices.php">Invoices</a>
     <a href="messages.php">Messages</a>
     <div class="spacer"></div>
+	<?php
+		if (isAdmin()) {
+			echo "<a href=\"adminRequests.php\">Switch to Admin View</a>";
+		}
+	?>
     <a href="logout.php">Logout</a>
   </nav>
 
@@ -151,12 +156,6 @@ $user_id = $_SESSION["user_id"];
 	}
 	echo "</tbody></table>";
 ?>
-
-    <p class="section-label">Monthly Expense Chart <u>(Chart.js via JS)</u></p>
-    <div class="chart-box">
-      [ Bar/Line Chart — Monthly Income vs. Expenses — Rendered by chart.js ]
-    </div>
-
   </div>
 
 </body>

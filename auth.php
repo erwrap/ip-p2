@@ -16,4 +16,8 @@ function requireAdmin() {
         exit;
     }
 }
+
+function isAdmin() {
+	return (isset($_SESSION["role"]) && $_SESSION["role"] === "admin");
+}
 ?>

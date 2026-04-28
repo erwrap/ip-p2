@@ -43,7 +43,7 @@ requireLogin();
 </head>
 <body>
   <div class="header">
-    <h1>K&B Bookkeeping — Client Dashboard</h1>
+    <h2>K&B Bookkeeping — Client Dashboard</h2>
   </div>
   
 
@@ -54,6 +54,11 @@ requireLogin();
     <a href="#">Invoices</a>
     <a href="messages.php">Messages</a>
     <div class="spacer"></div>
+	<?php
+		if (isAdmin()) {
+			echo "<a href=\"adminDashboard.php\">Switch to Admin View</a>";
+		}
+	?>
     <a href="logout.php">Logout</a>
   </nav>
 

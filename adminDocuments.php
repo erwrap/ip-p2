@@ -84,7 +84,7 @@ button:hover {
 <body>
 
 <div class="header">
-  <h2>Admin Panel — Documents</h2>
+  <h2>K&B Bookkeeping — Admin Documents</h2>
 </div>
 
 <nav class="navbar">
@@ -94,6 +94,11 @@ button:hover {
   <a href="#">Invoices</a>
   <a href="adminMessages.php">Messages</a>
   <div class="spacer"></div>
+  <?php
+		if (isAdmin()) {
+			echo "<a href=\"documents.php\">Switch to Client View</a>";
+		}
+  ?>
   <a href="#">Logout</a>
 </nav>
 
