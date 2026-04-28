@@ -49,7 +49,7 @@
 <body>
 
 <div class="header">
-  <h1>K&B Bookkeeping — Messages</h1>
+  <h2>K&B Bookkeeping — Messages</h2>
 </div>
 
 <nav class="navbar">

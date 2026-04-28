@@ -95,7 +95,7 @@ a.delete {
 <body>
 
 <div class="header">
-  <h1>K&B Bookkeeping — Documents</h1>
+  <h2>K&B Bookkeeping — Documents</h2>
 </div>
 
 <nav class="navbar">

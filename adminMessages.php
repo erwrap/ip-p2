@@ -8,8 +8,12 @@ requireAdmin();
 <head>
 <meta charset="UTF-8">
 <title>Admin — Messages</title>
-
+<link rel="stylesheet" href="css/clientNavbar.css">
 <style>
+:root {
+	--nav-bg: #1d5a55;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -20,45 +24,9 @@ body {
 }
 
 /* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 20px;
-  background-color: #1d5a55;
-  color: #fff;
-}
 
-.header h1 {
-  font-size: 20px;
-}
 
-/* NAVBAR (MATCH DASHBOARD STYLE) */
-.navbar {
-  display: flex;
-  border-bottom: 2px solid #1d5a55;
-}
 
-.navbar a {
-  display: block;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  background: #f5f5f5;
-  font-size: 13px;
-}
-
-.navbar a.active {
-  background: #1d5a55;
-  color: #fff;
-  border-color: #1d5a55;
-}
-
-.navbar .spacer {
-  flex: 1;
-}
 
 /* LAYOUT */
 .container {
@@ -163,14 +131,14 @@ body {
 <body>
 
 <div class="header">
-  <h1>K&B Bookkeeping — Admin Messages</h1>
+  <h2>K&B Bookkeeping — Admin Messages</h2>
 </div>
 
 <nav class="navbar">
-  <a href="adminDashboard.php">All Clients</a>
-  <a href="#">All Requests</a>
-  <a href="adminDocuments.php">All Documents</a>
-  <a href="#">All Invoices</a>
+  <a href="adminDashboard.php">Dashboard</a>
+  <a href="#">Service Requests</a>
+  <a href="adminDocuments.php">Documents</a>
+  <a href="#">Invoices</a>
   <a href="adminMessages.php" class="active">Messages</a>
 
   <div class="spacer"></div>

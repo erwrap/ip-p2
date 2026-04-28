@@ -8,39 +8,15 @@ requireAdmin();
 <head>
 <meta charset="UTF-8">
 <title>Admin — Documents</title>
-
+<link rel="stylesheet" href="css/clientNavbar.css">
 <style>
+:root {
+	--nav-bg: #1d5a55;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { font-family: Arial; font-size: 14px; }
-
-.header {
-  background: #1d5a55;
-  color: white;
-  padding: 25px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar {
-  display: flex;
-  border-bottom: 2px solid #1d5a55;
-}
-
-.navbar a {
-  padding: 10px;
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  text-decoration: none;
-  color: #333;
-}
-
-.navbar a.active {
-  background: #1d5a55;
-  color: white;
-}
-
-.spacer { flex: 1; }
 
 .content {
   display: flex;
@@ -109,7 +85,6 @@ button:hover {
 
 <div class="header">
   <h2>Admin Panel — Documents</h2>
-  <div>Admin</div>
 </div>
 
 <nav class="navbar">

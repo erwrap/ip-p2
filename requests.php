@@ -89,7 +89,7 @@ $user_id = $_SESSION["user_id"];
 </head>
 <body>
   <div class="header">
-    <h1>K&B Bookkeeping — Service Requests</h1>
+    <h2>K&B Bookkeeping — Service Requests</h2>
   </div>
   
 
