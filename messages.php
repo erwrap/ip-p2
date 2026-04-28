@@ -18,6 +18,7 @@ body { font-family: Arial; font-size: 14px; background:#fff; }
   color:#333;
   border:1px solid #ccc;
   background:#f5f5f5;
+  font-size: 13px;
 }
 .navbar a.active { background:#2a8a7e; color:#fff; }
 .spacer { flex:1; }
