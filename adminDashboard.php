@@ -94,9 +94,9 @@ input, select {
 
 <nav class="navbar">
   <a href="#" class="active">Dashboard</a>
-  <a href="#">Service Requests</a>
+  <a href="adminRequests.php">Service Requests</a>
   <a href="adminDocuments.php">Documents</a>
-  <a href="#">Invoices</a>
+  <a href="adminInvoices.php">Invoices</a>
   <a href="adminMessages.php">Messages</a>
 
   <div class="spacer"></div>
