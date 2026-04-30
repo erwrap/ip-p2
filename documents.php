@@ -105,6 +105,11 @@ a.delete {
   <a href="#">Invoices</a>
   <a href="messages.php">Messages</a>
   <div class="spacer"></div>
+	<?php
+		if (isAdmin()) {
+			echo "<a href=\"adminDocuments.php\">Switch to Admin View</a>";
+		}
+	?>
   <a href="logout.php">Logout</a>
 </nav>
 

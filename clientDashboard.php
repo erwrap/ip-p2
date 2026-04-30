@@ -1,6 +1,9 @@
 <?php
 require_once "auth.php";
+require_once "dbFuncs.php";
 requireLogin();
+if (!isset($_SESSION)) { session_start(); }
+$user_id = $_SESSION["user_id"];
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +69,13 @@ requireLogin();
 
     <div class="cards">
       <div class="card">
-        <div class="num">3</div>
+        <div class="num"><?php
+			$pdo = connectDB();
+			$qry = $pdo->prepare("SELECT count(DISTINCT request_id) FROM service_requests WHERE user_id = ? and status = \"pending\"");
+			$qry->execute(array($user_id));
+			$result = $qry->fetchAll();
+			echo end($result[0]);
+		?></div>
         <div class="label">Open Requests</div>
       </div>
       <div class="card">
@@ -84,6 +93,29 @@ requireLogin();
     </div>
 
     <p class="section-label">Recent Service Requests</p>
+	<?php
+	$qry = $pdo->query("SELECT request_id, name, notes, priority, status, created_at FROM service_requests JOIN services ON service_requests.service_id = services.service_id WHERE user_id = $user_id ORDER BY service_requests.created_at DESC LIMIT 5 ");
+	echo "<table><thead><tr>";
+	echo "<th>Service ID</th><th>Service Type</th><th>Notes</th><th>Date Submitted</th><th>Status</th><th>Action</th>";
+	echo "</tr></thead><tbody>";
+	while ($row = $qry->fetch(PDO::FETCH_ASSOC)) {
+		$id = $row['request_id'];
+		$status = $row['status'];
+		$name = $row['name'];
+		$created_at = $row['created_at'];
+		$notes = $row['notes'];
+		echo "<tr>";
+		echo "<td>$id</td>";
+		echo "<td>$name</td>";
+		echo "<td>$notes</td>";
+		echo "<td>$created_at</td>";
+		echo "<td>$status</td>";
+		echo "<td>:(</td>";
+		echo "</tr>";
+	}
+	echo "</tbody></table>";
+?>
+<!--
     <table>
       <thead>
         <tr>
@@ -114,7 +146,7 @@ requireLogin();
         </tr>
       </tbody>
     </table>
-
+-->
     <p class="section-label">Monthly Expense Chart <u>(Chart.js via JS)</u></p>
     <div class="chart-box">
       [ Bar/Line Chart — Monthly Income vs. Expenses — Rendered by chart.js ]
