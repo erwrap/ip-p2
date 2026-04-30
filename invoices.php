@@ -12,7 +12,7 @@ require_once 'dbFuncs.php';
 $pdo = connectDB();
 $user_id = $_SESSION['user_id'];
 
-// --- CONSULTA 1: Summary cards ---
+// --- Summary cards ---
 $stmtSummary = $pdo->prepare("
     SELECT
         COALESCE(SUM(CASE WHEN status = 'unpaid' THEN amount ELSE 0 END), 0)               AS total_due,
@@ -25,7 +25,7 @@ $stmtSummary = $pdo->prepare("
 $stmtSummary->execute([$user_id]);
 $summary = $stmtSummary->fetch();
 
-// --- CONSULTA 2: Historial de facturas ---
+// --- Invoice history ---
 $stmtInvoices = $pdo->prepare("
     SELECT
         CONCAT('INV-', LPAD(invoice_id, 3, '0')) AS invoice_num,
