@@ -59,7 +59,7 @@
   <a href="clientDashboard.php">Dashboard</a>
   <a href="requests.php">Service Requests</a>
   <a href="documents.php">Documents</a>
-  <a href="#">Invoices</a>
+  <a href="invoices.php">Invoices</a>
   <a href="#" class="active">Messages</a>
   <div class="spacer"></div>
 	<?php
