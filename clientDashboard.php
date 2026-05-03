@@ -54,7 +54,7 @@ $user_id = $_SESSION["user_id"];
     <a href="#" class="active">Dashboard</a>
     <a href="requests.php">Service Requests</a>
     <a href="documents.php">Documents</a>
-    <a href="invoices.php">Invoices</a>
+    <a href="#">Invoices</a>
     <a href="messages.php">Messages</a>
     <div class="spacer"></div>
 	<?php
@@ -87,7 +87,12 @@ $user_id = $_SESSION["user_id"];
         <div class="label">Uploaded Docs</div>
       </div>
       <div class="card">
-        <div class="num">1</div>
+        <div class="num"><?php
+			$qry = $pdo->prepare("SELECT COUNT(*) as unread_count FROM messages WHERE receiver_id = ? AND read_status = 0");
+			$qry->execute(array($user_id));
+			$result = $qry->fetch(PDO::FETCH_ASSOC);
+			echo $result['unread_count'];
+		?></div>
         <div class="label">Unread Messages</div>
       </div>
     </div>

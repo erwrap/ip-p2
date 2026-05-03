@@ -35,6 +35,59 @@ if ($action === "users") {
 }
 
 /* =========================
+   MARK MESSAGES AS READ
+========================= */
+if ($action === "markAsRead") {
+    if ($role === "admin") {
+        // Admin marks messages from a specific client as read
+        $other = intval($_GET['user_id']);
+        $stmt = $pdo->prepare("
+            UPDATE messages
+            SET read_status = 1
+            WHERE sender_id = ? AND receiver_id = ?
+        ");
+        $stmt->execute([$other, $user_id]);
+    } else {
+        // Client marks all messages from admin as read
+        $stmt = $pdo->prepare("
+            UPDATE messages
+            SET read_status = 1
+            WHERE receiver_id = ? AND read_status = 0
+        ");
+        $stmt->execute([$user_id]);
+    }
+    echo json_encode(["status" => "success"]);
+    exit;
+}
+
+/* =========================
+   GET UNREAD MESSAGE COUNT
+========================= */
+if ($action === "getUnreadCount") {
+    if ($role === "admin") {
+        // Admin gets unread messages from a specific client
+        $other = intval($_GET['user_id']);
+        $stmt = $pdo->prepare("
+            SELECT COUNT(*) as unread_count
+            FROM messages
+            WHERE sender_id = ? AND receiver_id = ? AND read_status = 0
+        ");
+        $stmt->execute([$other, $user_id]);
+    } else {
+        // Client gets their unread messages
+        $stmt = $pdo->prepare("
+            SELECT COUNT(*) as unread_count
+            FROM messages
+            WHERE receiver_id = ? AND read_status = 0
+        ");
+        $stmt->execute([$user_id]);
+    }
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    echo json_encode(["unread_count" => $result['unread_count']]);
+    exit;
+}
+
+/* =========================
    GET MESSAGES
 ========================= */
 if ($action === "get" || $action === "getMessages") {
