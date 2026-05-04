@@ -279,7 +279,7 @@ $invoices = $stmtInvoices->fetchAll();
     <a href="messages.php">Messages</a>
     <div class="spacer"></div>
     <?php if (isAdmin()): ?>
-      <a href="adminDashboard.php" class="switch-btn">Switch to Admin View</a>
+      <a href="adminInvoices.php" class="switch-btn">Switch to Admin View</a>
     <?php endif; ?>
     <a href="logout.php">Logout</a>
   </nav>
