@@ -138,7 +138,7 @@ body {
   <a href="adminDashboard.php">Dashboard</a>
   <a href="adminRequests.php">Service Requests</a>
   <a href="adminDocuments.php">Documents</a>
-  <a href="#">Invoices</a>
+  <a href="adminInvoices.php">Invoices</a>
   <a href="adminMessages.php" class="active">Messages</a>
 
   <div class="spacer"></div>
