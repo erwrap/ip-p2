@@ -118,7 +118,7 @@ $user_id = $_SESSION["user_id"];
 	$pdo = connectDB();
 	$qry = $pdo->query("SELECT request_id, full_name, email, name, notes, priority, status, service_requests.created_at FROM service_requests JOIN services ON service_requests.service_id = services.service_id JOIN users ON service_requests.user_id = users.user_id ORDER BY created_at DESC");
 	echo "<table><thead><tr>";
-	echo "<th>Service ID</th><th>Client</th><th>Email</th><th>Service Type</th><th>Notes</th><th>Date Submitted</th><th>Status</th><th>Action</th>";
+	echo "<th>Service ID</th><th>Client</th><th>Email</th><th>Service Type</th><th>Notes</th><th>Date Submitted</th><th>Status</th>";
 	echo "</tr></thead><tbody>";
 	while ($row = $qry->fetch(PDO::FETCH_ASSOC)) {
 		$id = $row['request_id'];
@@ -136,7 +136,6 @@ $user_id = $_SESSION["user_id"];
 		echo "<td>$notes</td>";
 		echo "<td>$created_at</td>";
 		echo "<td>$status</td>";
-		echo "<td>:(</td>";
 		echo "</tr>";
 	}
 	echo "</tbody></table>";
