@@ -83,7 +83,12 @@ $user_id = $_SESSION["user_id"];
         <div class="label">Unpaid Invoices</div>
       </div>
       <div class="card">
-        <div class="num">5</div>
+        <div class="num"><?php
+			$qry = $pdo->prepare("SELECT count(DISTINCT doc_id) FROM documents WHERE user_id = ?");
+			$qry->execute(array($user_id));
+			$result = $qry->fetchAll();
+			echo end($result[0]);
+		?></div>
         <div class="label">Uploaded Docs</div>
       </div>
       <div class="card">
