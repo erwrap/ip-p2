@@ -12,9 +12,10 @@ if (!isset($_FILES['file'])) {
     ]);
     exit;
 }
+session_start();
 
 $file = $_FILES['file'];
-$user_id = $_POST['user_id'] ?? 0;
+$user_id = $_SESSION['user_id'] ?? 0;
 $category = $_POST['category'] ?? '';
 $note = $_POST['note'] ?? '';
 
