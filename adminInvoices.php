@@ -223,7 +223,7 @@ $clients = $pdo->query("SELECT user_id, full_name FROM users WHERE role='client'
         <a href="adminInvoices.php" class="active">Invoices</a>
         <a href="adminMessages.php">Messages</a>
         <div class="spacer"></div>
-        <a href="clientDashboard.php" class="switch-btn">Switch to Client View</a>
+        <a href="invoices.php" class="switch-btn">Switch to Client View</a>
         <a href="logout.php">Logout</a>
     </nav>
 
