@@ -228,7 +228,7 @@ $invoices = $stmtInvoices->fetchAll();
 <!-- Payment Modal -->
 <div class="modal-overlay" id="payModal">
   <div class="modal">
-    <h3>💳 Payment Details</h3>
+    <h3>Payment Details</h3>
 
     <div id="modalForm">
       <label>Name on Card</label>
