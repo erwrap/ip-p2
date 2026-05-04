@@ -83,7 +83,7 @@
 let adminId      = null;
 let currentUser  = <?php echo intval($_SESSION["user_id"]); ?>;
 
-/* GET ADMIN ID FIRST, THEN LOAD MESSAGES AND START POLL */
+/* GET ADMIN ID FIRST, THEN LOAD MESSAGES, MARK AS READ, AND START POLL */
 function getAdmin() {
   fetch("messagesAPI.php?action=getAdmin")
     .then(res => res.json())
@@ -94,7 +94,8 @@ function getAdmin() {
         return;
       }
       loadMessages();
-      setInterval(loadMessages, 10000); // only start polling once adminId is set
+      markMessagesAsRead(); // Mark messages as read when the page loads
+      setInterval(loadMessages, 10000); // Start polling for new messages
     });
 }
 
@@ -103,6 +104,13 @@ function loadMessages() {
   fetch("messagesAPI.php?action=get&user_id=" + adminId)
     .then(res => res.json())
     .then(data => render(data));
+}
+
+/* MARK MESSAGES AS READ */
+function markMessagesAsRead() {
+  fetch("messagesAPI.php?action=markAsRead&user_id=" + adminId)
+    .then(res => res.json())
+    .catch(err => console.error("Error marking messages as read:", err));
 }
 
 /* FORMAT DATE */
